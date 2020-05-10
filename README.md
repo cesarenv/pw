@@ -14,7 +14,7 @@ Run the `setup.sh` script which adds an alias to your shell profile:
 ./setup.sh
 ```
 
-## run
+## usage
 
 Run the alias:
 
