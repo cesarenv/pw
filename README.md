@@ -2,11 +2,11 @@
 
 A (pseudo) random password generator.
 
-### requirements
+### requirements
 
 You need [Node](https://nodejs.org/en/) installed.
 
-### setup
+### setup
 
 Run the `setup.sh` script which adds an alias to your shell profile:
 
