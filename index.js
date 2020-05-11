@@ -1,5 +1,5 @@
 /**
- * Get the value of the flag passed as a command line argument
+ * Get the value of the flag
  */
 const pick = flag => {
   const index = process.argv.indexOf(flag) + 1
@@ -8,7 +8,14 @@ const pick = flag => {
 }
 
 /**
- * Get a random character from a `set`
+ * Check for existence of a given flag
+ */
+const exists = flag => {
+  return process.argv.includes(flag)
+}
+
+/**
+ * Get a random character from a set of characters
  */
 const getRandomCharacter = (set) => {
   return set[Math.floor(Math.random() * (set.length - 1))]
@@ -25,14 +32,21 @@ const generatePassword = (length, alphabet) => {
   return result.join('')
 }
 
-// TODO limit alphabet based on args
-const digit = '0123456789'
-const lower = 'abcdefghijklmnopqrstuvwxyz'
-const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const alphabet = `${digit}${lower}${upper}`
+if (exists('-h') || exists('--help')) {
+  console.log('usage: pw [-l num] [-n num] [--no-upper] [--no-digits]')
+  process.exit()
+}
 
-let quantity = pick('-n') || 1
 const length = pick('-l') || 20
+let quantity = pick('-n') || 1
+
+let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+if (!exists('--no-upper')) {
+  alphabet += alphabet.toUpperCase()
+}
+if (!exists('--no-digits')) {
+  alphabet += '1234567890'
+}
 
 while (quantity--) {
   console.log(generatePassword(length, alphabet))
