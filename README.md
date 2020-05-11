@@ -14,7 +14,7 @@ Run the `setup.sh` script which adds an alias to your shell profile:
 ./setup.sh
 ```
 
-## usage
+### usage
 
 Run the alias:
 
@@ -22,7 +22,7 @@ Run the alias:
 pw -l <password length>
 ```
 
-**Examples**:
+#### Examples
 
 ```shell
 $ pw # defaults to 20 characters
