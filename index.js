@@ -25,12 +25,15 @@ const generatePassword = (length, alphabet) => {
   return result.join('')
 }
 
-const len = pick('-l') || 20
-
 // TODO limit alphabet based on args
 const digit = '0123456789'
 const lower = 'abcdefghijklmnopqrstuvwxyz'
 const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const alphabet = `${digit}${lower}${upper}`
 
-console.log(generatePassword(len, alphabet))
+let quantity = pick('-n') || 1
+const length = pick('-l') || 20
+
+while (quantity--) {
+  console.log(generatePassword(length, alphabet))
+}
