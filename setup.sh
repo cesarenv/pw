@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo alias pw=\"sh $(pwd)/pw.sh\" >> $HOME/.zshrc
-echo alias pw=\"sh $(pwd)/pw.sh\" >> $HOME/.bashrc
+echo alias pwgen=\"node $(pwd)/pwgen.js\" >> $HOME/.zshrc
+echo alias pwgen=\"node $(pwd)/pwgen.js\" >> $HOME/.bashrc
